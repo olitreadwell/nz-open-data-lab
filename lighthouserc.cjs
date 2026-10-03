@@ -1,3 +1,8 @@
+// PORT lets the grow loop serve each country's site on its own port so the
+// three countries can run at the same time. E2E_PORT is the older name and
+// still works when PORT is unset.
+const PORT = process.env.PORT ?? process.env.E2E_PORT ?? '3000';
+const ORIGIN = `http://127.0.0.1:${PORT}`;
 // Read by `npm run perf`, which runs Lighthouse CI through npx rather than
 // from a lockfile dependency. @lhci/cli@0.15.1 pins its own copy of
 // lighthouse, and that tree carries open high severity advisories in
@@ -10,12 +15,12 @@ module.exports = {
       // against the built `out` directory served by `serve`, matching what
       // the Playwright config serves in e2e. Run `npm run build` first.
       url: [
-        'http://127.0.0.1:3000/',
-        'http://127.0.0.1:3000/about/',
-        'http://127.0.0.1:3000/agriculture/sheep-index/',
-        'http://127.0.0.1:3000/politics/parliament-party-seats/',
+        `${ORIGIN}/`,
+        `${ORIGIN}/about/`,
+        `${ORIGIN}/agriculture/sheep-index/`,
+        `${ORIGIN}/politics/parliament-party-seats/`,
       ],
-      startServerCommand: 'cd apps/web && npx serve out -l 3000',
+      startServerCommand: `cd apps/web && npx serve out -l ${PORT}`,
       // Three runs, because the metric that moves most on a shared runner
       // (total-blocking-time) swung between 354ms and 944ms across two CI
       // runs of the same code. Lighthouse CI reports the median.

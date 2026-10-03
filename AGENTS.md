@@ -1,6 +1,6 @@
 @~/.claude/AGENTS.md
 
-# nz-data-lab
+# nz-open-data-lab
 
 Example site for `nz-open-data-connectors`: one microsite (the sheep index)
 showing the full pipeline from a NZ public-data connector to a deployed static
@@ -16,9 +16,9 @@ doc that disagrees)
   `packages/ui/components.json` and the Storybook Style Guide
 - Vitest + Testing Library + jest-axe (unit/a11y), Playwright + `@axe-core/playwright`
   (e2e/a11y), Storybook
-- `packages/stats-nz` is vendored from
-  `github.com/olitreadwell/nz-open-data-connectors` — sync it with
-  `node scripts/sync-connectors.mjs`, never edit it in place.
+- `@nz-open-data-connectors/stats-nz` comes from npm, not from a vendored copy.
+  Fix it in `github.com/olitreadwell/nz-open-data-connectors` and bump the
+  version here.
 
 ## Quality gates (enforced by husky + ESLint, see `packages/config-eslint/base.js`)
 
@@ -36,7 +36,7 @@ doc that disagrees)
 
 ## Conventions
 
-- Components: prefer `@nz-lab/ui` first (`packages/ui/src/index.ts` is the export
+- Components: prefer `@nz-open-data-lab/ui` first (`packages/ui/src/index.ts` is the export
   surface). Canonical pattern is `packages/ui/src/components/Button.tsx` +
   `_button.scss` — copy it for new hybrid Tailwind/SCSS components.
 - New interactive primitive (dialog, dropdown, etc): `npx shadcn add <component>` run

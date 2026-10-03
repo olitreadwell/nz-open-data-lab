@@ -10,12 +10,12 @@ it fetchable live.
 ## Data source
 
 Stats NZ Aotearoa Data Explorer, table `AGR_AGR_003` (Livestock Numbers by Regional Council),
-fetched at deploy time as `format=csv` via `@nz-lab/stats-nz`. The page filters the national
+fetched at deploy time as `format=csv` via `@nz-open-data-connectors/stats-nz`. The page filters the national
 sheep series (livestock code `6731`, area code `20` = New Zealand total). The site is a
 static export, so the page is a build-time snapshot; the deploy workflow runs daily to keep the
 numbers fresh. If the Stats NZ gateway blocks the build runner (GitHub Actions IPs get 401 on
 the keyless path), the build falls back to the committed snapshot of the same table in
-`packages/stats-nz/src/fixtures/`.
+`apps/web/src/lib/fixtures/`.
 
 The code-to-label mapping is pinned in `sheep-data.ts` and was verified against published Stats
 NZ figures (49.5m sheep in 1994, 32.6m in 2010, 23.3m in 2025). The proper codelist endpoint

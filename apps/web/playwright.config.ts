@@ -1,10 +1,11 @@
 import { defineConfig } from '@playwright/test';
 
 const CI = !!process.env.CI;
+const PORT = process.env.PORT ?? process.env.E2E_PORT ?? '3000';
 // Normalized to end with "/" so relative page.goto() URLs resolve against the
 // baseURL path (the site may be served under a base path rather than at the
 // origin root).
-const BASE_URL = (process.env.BASE_URL ?? 'http://localhost:3000').replace(/\/?$/, '/');
+const BASE_URL = (process.env.BASE_URL ?? `http://localhost:${PORT}`).replace(/\/?$/, '/');
 
 export default defineConfig({
   testDir: './e2e',
@@ -55,8 +56,8 @@ export default defineConfig({
     // The app is a static export (output: 'export'), so the server must be
     // the built `out/` directory in both CI and local runs. Run `npm run
     // build` (or `npm run check`) first so `out/` exists.
-    command: 'npx serve out -l 3000',
-    port: 3000,
+    command: `npx serve out -l ${PORT}`,
+    port: Number(PORT),
     reuseExistingServer: false,
   },
 });

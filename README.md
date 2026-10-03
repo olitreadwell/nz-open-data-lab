@@ -1,4 +1,4 @@
-# nz-data-lab
+# nz-open-data-lab
 
 Example site for
 [nz-open-data-connectors](https://github.com/olitreadwell/nz-open-data-connectors).
@@ -14,7 +14,7 @@ public-data connector to a deployed static chart.
 ## What this example shows
 
 - `apps/web/src/lib/sheep-data.ts` calls `createStatsNzClient` from
-  `@nz-lab/stats-nz` to pull table AGR_AGR_003 (Livestock Numbers by Regional
+  `@nz-open-data-connectors/stats-nz` to pull table AGR_AGR_003 (Livestock Numbers by Regional
   Council) at build time.
 - The build falls back to a committed CSV fixture when the Stats NZ gateway
   blocks the build runner, so the static export always succeeds.
@@ -23,17 +23,10 @@ public-data connector to a deployed static chart.
 
 ## Connectors wiring
 
-The site uses one package from the connectors repo, `@nz-lab/stats-nz`,
-vendored under `packages/stats-nz`. npm git dependencies cannot target a
-subpackage inside a workspace monorepo, so the package is copied here and kept
-in sync with a script:
-
-```bash
-node scripts/sync-connectors.mjs                     # uses ../nz-open-data-connectors
-node scripts/sync-connectors.mjs --from /path/to/repo
-```
-
-Edit `packages/stats-nz` only by syncing from the connectors repo.
+The site uses one package from the connectors repo,
+`@nz-open-data-connectors/stats-nz`, installed from npm. It is no longer
+vendored. Bump the version in `apps/web/package.json` to pick up a release from
+`github.com/olitreadwell/nz-open-data-connectors`.
 
 ## Stack
 

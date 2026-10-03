@@ -1,4 +1,4 @@
-# nz-data-lab
+# nz-open-data-lab
 
 Small experiments digging through New Zealand public data (Stats NZ, Hansard
 transcripts, and whatever else turns up something weird, funny, or surprising). Built
@@ -26,9 +26,9 @@ See `AGENTS.md` for global agent rules and quality gates.
 
 ## Package structure
 
-- `apps/web` — Next.js app (`@nz-lab/web`)
+- `apps/web` — Next.js app (`@nz-open-data-lab/web`)
 - `packages/ui` — Shared layout primitives + canonical `Button` + shadcn/ui scaffold +
-  style system (`@nz-lab/ui`)
+  style system (`@nz-open-data-lab/ui`)
 - `packages/config-typescript` — Shared TypeScript configs
 - `packages/config-eslint` — Shared ESLint configs (flat config, ESLint 9)
 - `packages/config-tailwind` — Shared Tailwind theme + design tokens
@@ -98,10 +98,10 @@ see the comment atop `packages/ui/src/components/ui/button.tsx` for why a shadcn
 - **`_typography.scss`** — `.numeral-heading-*`, `.numeral-paragraph-*`,
   `.numeral-text-*` classes
 
-## What's in `@nz-lab/ui`
+## What's in `@nz-open-data-lab/ui`
 
 ```ts
-import { Box, Button, cn, Container, Flex, Grid, HStack, Section, Stack, VStack } from '@nz-lab/ui';
+import { Box, Button, cn, Container, Flex, Grid, HStack, Section, Stack, VStack } from '@nz-open-data-lab/ui';
 ```
 
 That's the public surface. We don't pre-ship dialogs, dropdowns, tables, etc as public

@@ -13,7 +13,7 @@ const ALLOWED_DEV_ORIGINS = (process.env.ALLOWED_DEV_ORIGINS ?? '')
   .filter((origin) => origin !== '');
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['@nz-lab/ui'],
+  transpilePackages: ['@nz-open-data-lab/ui'],
   typedRoutes: true,
   devIndicators: false,
   allowedDevOrigins: ALLOWED_DEV_ORIGINS,

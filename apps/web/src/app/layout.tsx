@@ -1,5 +1,5 @@
-import { cn } from '@nz-lab/ui';
-import '@nz-lab/ui/styles';
+import { cn } from '@nz-open-data-lab/ui';
+import '@nz-open-data-lab/ui/styles';
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
 
@@ -12,7 +12,7 @@ import './globals.css';
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-  title: 'nz-data-lab',
+  title: 'nz-open-data-lab',
   description: 'Small experiments digging through New Zealand public data.',
 };
 

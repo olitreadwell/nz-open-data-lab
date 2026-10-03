@@ -1,4 +1,4 @@
-import { Container, Stack } from '@nz-lab/ui';
+import { Container, Stack } from '@nz-open-data-lab/ui';
 import Link from 'next/link';
 
 import { getMicrositeAccentStyles } from './microsite-styles';

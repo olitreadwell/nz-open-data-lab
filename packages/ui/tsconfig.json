@@ -1,5 +1,5 @@
 {
-  "extends": "@nz-lab/config-typescript/library.json",
+  "extends": "@nz-open-data-lab/config-typescript/library.json",
   "compilerOptions": {
     "rootDir": ".",
     "paths": {

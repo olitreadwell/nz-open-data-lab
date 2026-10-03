@@ -1,5 +1,5 @@
-import { parseStatsNzCsv, StatsNzError } from '@nz-lab/stats-nz';
-import type { StatsNzObservation } from '@nz-lab/stats-nz';
+import { parseStatsNzCsv, StatsNzError } from '@nz-open-data-connectors/stats-nz';
+import type { StatsNzObservation } from '@nz-open-data-connectors/stats-nz';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
@@ -21,7 +21,7 @@ const REAL_ROWS: StatsNzObservation[] = [
 const LIVESTOCK_FIXTURE = readFileSync(
   path.join(
     process.cwd(),
-    '../../packages/stats-nz/src/fixtures/agricultural-livestock-regional-council-2025-08-17.csv',
+    './src/lib/fixtures/agricultural-livestock-regional-council-2025-08-17.csv',
   ),
   'utf8',
 );

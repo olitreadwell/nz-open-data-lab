@@ -1,5 +1,9 @@
-import { createStatsNzClient, parseStatsNzCsv, StatsNzError } from '@nz-lab/stats-nz';
-import type { StatsNzObservation } from '@nz-lab/stats-nz';
+import {
+  createStatsNzClient,
+  parseStatsNzCsv,
+  StatsNzError,
+} from '@nz-open-data-connectors/stats-nz';
+import type { StatsNzObservation } from '@nz-open-data-connectors/stats-nz';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 
@@ -16,7 +20,7 @@ export const NATIONAL_AREA_CODE = '20';
 // 401 on the keyless path).
 const SHEEP_FIXTURE_PATH = path.join(
   process.cwd(),
-  '../../packages/stats-nz/src/fixtures/agricultural-livestock-regional-council-2025-08-17.csv',
+  './src/lib/fixtures/agricultural-livestock-regional-council-2025-08-17.csv',
 );
 
 export interface SheepSeriesPoint {
