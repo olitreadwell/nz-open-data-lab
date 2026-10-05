@@ -1,7 +1,7 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
-import { micrositePathFor, MICROSITES } from '../src/lib/microsites';
+import { micrositePathFor, SHOWN_MICROSITES } from '../src/lib/microsites';
 import { PUBLISHED_MICROSITES } from '../src/lib/published-microsites';
 
 test.describe('home', () => {
@@ -11,7 +11,7 @@ test.describe('home', () => {
     await page.goto('./');
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
     // One card per published microsite, no more and no fewer.
-    for (const microsite of MICROSITES) {
+    for (const microsite of SHOWN_MICROSITES) {
       const href = micrositePathFor(microsite);
       await expect(page.locator(`a[href="${href}"]`)).toHaveCount(1);
     }
@@ -27,7 +27,7 @@ test.describe('home', () => {
   test('@critical opens the parliament story from its card', async ({ page }) => {
     test.skip(
       !PUBLISHED_MICROSITES.includes('parliament-party-seats'),
-      'the parliament story is not the published microsite',
+      'the parliament story is not the microsite the hub shows',
     );
     await page.goto('./');
     await page.getByRole('link', { name: /which party held the most seats/i }).click();
