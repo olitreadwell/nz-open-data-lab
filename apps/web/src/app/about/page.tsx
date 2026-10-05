@@ -36,17 +36,17 @@ export default function AboutPage(): React.ReactElement {
         </section>
 
         <section className="space-y-3">
-          <h2 className="numeral-heading-lg">New Zealand Data &amp; APIs</h2>
+          <h2 className="numeral-heading-lg">Awesome NZ Open Data</h2>
           <p className="numeral-paragraph-md">
             When a new source is needed, it usually starts in{' '}
             <Link
-              href="https://github.com/olitreadwell/new-zealand-data"
+              href="https://github.com/olitreadwell/awesome-nz-open-data"
               className="underline hover:text-[var(--color-fg)]"
             >
-              olitreadwell/new-zealand-data
+              awesome-nz-open-data
             </Link>
-            , a community list of New Zealand data and available APIs, from central government
-            agencies to local councils, published as a searchable site.
+            , a curated list of New Zealand data sources, APIs and registers, from central
+            government agencies to local councils, published as a searchable site.
           </p>
         </section>
 

@@ -2,6 +2,7 @@ import { renderToReadableStream } from 'react-dom/server';
 import { describe, expect, it, vi } from 'vitest';
 
 import { CATEGORY_SLUGS, MICROSITES } from '@/lib/microsites';
+import { PUBLISHED_MICROSITES } from '@/lib/published-microsites';
 
 import MicrositePage, { generateMetadata } from './page';
 
@@ -124,17 +125,20 @@ describe('MicrositePage', () => {
     );
   });
 
-  it('renders the parliament story at its politics path', async () => {
-    const stream = await renderToReadableStream(
-      <MicrositePage params={Promise.resolve(paramsFor('parliament-party-seats'))} />,
-    );
-    const html = await new Response(stream).text();
-    expect(html).toContain('Which party held the most seats, election by election.');
-    expect(html).toContain('href="/politics"');
-    expect(html).toContain('Elections shown');
-    expect(html).toContain('Government changes');
-    expect(html).toContain('Share of the house, and who held the top job.');
-    expect(html).toContain('Seat counts were fetched from the datastore');
-    expect(html.match(/<h1[^>]*>/g) ?? []).toHaveLength(1);
-  });
+  it.skipIf(!PUBLISHED_MICROSITES.includes('parliament-party-seats'))(
+    'renders the parliament story at its politics path',
+    async () => {
+      const stream = await renderToReadableStream(
+        <MicrositePage params={Promise.resolve(paramsFor('parliament-party-seats'))} />,
+      );
+      const html = await new Response(stream).text();
+      expect(html).toContain('Which party held the most seats, election by election.');
+      expect(html).toContain('href="/politics"');
+      expect(html).toContain('Elections shown');
+      expect(html).toContain('Government changes');
+      expect(html).toContain('Share of the house, and who held the top job.');
+      expect(html).toContain('Seat counts were fetched from the datastore');
+      expect(html.match(/<h1[^>]*>/g) ?? []).toHaveLength(1);
+    },
+  );
 });

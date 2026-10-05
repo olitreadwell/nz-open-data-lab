@@ -2,6 +2,7 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
 import { micrositePathFor, MICROSITES } from '../src/lib/microsites';
+import { PUBLISHED_MICROSITES } from '../src/lib/published-microsites';
 
 test.describe('home', () => {
   test('@critical renders the landing page with microsite cards', async ({ page }) => {
@@ -24,6 +25,10 @@ test.describe('home', () => {
   });
 
   test('@critical opens the parliament story from its card', async ({ page }) => {
+    test.skip(
+      !PUBLISHED_MICROSITES.includes('parliament-party-seats'),
+      'the parliament story is not the published microsite',
+    );
     await page.goto('./');
     await page.getByRole('link', { name: /which party held the most seats/i }).click();
     await expect(page).toHaveURL(/\/politics\/parliament-party-seats/);

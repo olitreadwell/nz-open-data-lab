@@ -16,9 +16,9 @@ describe('AboutPage', () => {
       'href',
       'https://github.com/olitreadwell/nz-open-data-connectors',
     );
-    expect(screen.getByRole('link', { name: 'olitreadwell/new-zealand-data' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'awesome-nz-open-data' })).toHaveAttribute(
       'href',
-      'https://github.com/olitreadwell/new-zealand-data',
+      'https://github.com/olitreadwell/awesome-nz-open-data',
     );
     expect(screen.getByRole('link', { name: 'GitHub' })).toHaveAttribute(
       'href',

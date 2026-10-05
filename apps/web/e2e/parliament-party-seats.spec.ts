@@ -2,10 +2,18 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
 import { primeMinistersDuringYear } from '../src/lib/government-pms';
+import { PUBLISHED_MICROSITES } from '../src/lib/published-microsites';
 
 const PARLIAMENT_PATH = './politics/parliament-party-seats/';
 
 test.describe('parliament party seats microsite', () => {
+  // The site shows one microsite at a time (PUBLISHED_MICROSITES); this spec
+  // runs again as soon as the parliament story is the published one.
+  test.skip(
+    !PUBLISHED_MICROSITES.includes('parliament-party-seats'),
+    'the parliament story is not the published microsite',
+  );
+
   test('@smoke labels the seat chart with the election years it shows', async ({ page }) => {
     await page.goto(PARLIAMENT_PATH);
     const seatChart = page.getByRole('application', { name: /Seats by party per parliament/ });
