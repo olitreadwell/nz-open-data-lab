@@ -173,7 +173,7 @@ export const MICROSITES: MicrositeConfig[] = withHiddenMicrositesRemoved<Microsi
   {
     slug: 'sheep-index',
     keyFacts: [
-      'Flock fell from 49.5 million (1994) to 23.3 million (2025), nearly halving.',
+      'Flock fell 53%, from 49.5 million (1994) to 23.3 million (2025).',
       '1982 peak: 70 million sheep, more than 20 for every person.',
       'About four sheep per person by 2024, down from six in 2016.',
     ],
@@ -183,7 +183,7 @@ export const MICROSITES: MicrositeConfig[] = withHiddenMicrositesRemoved<Microsi
     eyebrow: 'the sheep index',
     title: "New Zealand's national animal is in freefall.",
     description:
-      'The national sheep flock has nearly halved since 1994, dropping from 49.5 million to 23.3 million by 2025. The series starts in 1994, the year the flock peaked, and comes straight from the Stats NZ Aotearoa Data Explorer at deploy time.',
+      'The national sheep flock is down 53% since 1994, from 49.5 million to 23.3 million by 2025. The series starts in 1994, the year the flock peaked, and comes straight from the Stats NZ Aotearoa Data Explorer at deploy time.',
     paragraphs: [
       'The real peak came earlier. In 1982 New Zealand counted 70 million sheep, more than 20 for every person. The flock has shrunk in almost every year since.',
       'In 2016 there were still six sheep for every person. By 2024 that was down to about four.',
@@ -220,7 +220,7 @@ export const MICROSITES: MicrositeConfig[] = withHiddenMicrositesRemoved<Microsi
   {
     slug: 'dairy-takeover',
     keyFacts: [
-      'The sheep flock nearly halved while dairy cattle nearly doubled.',
+      'The sheep flock more than halved while dairy cattle nearly doubled.',
       'Farming subsidies ended in 1984; dairy then paid better.',
       'Canterbury’s lamb flock gave way to dairy cows.',
     ],
@@ -231,7 +231,7 @@ export const MICROSITES: MicrositeConfig[] = withHiddenMicrositesRemoved<Microsi
     eyebrow: 'the dairy takeover',
     title: 'The paddocks flipped from wool to milk.',
     description:
-      'The sheep flock nearly halved while dairy cattle nearly doubled. The same paddocks that once grew wool now grow milk. The beef herd and deer herd shrank too.',
+      'The sheep flock more than halved while dairy cattle nearly doubled. The same paddocks that once grew wool now grow milk. The beef herd and deer herd shrank too.',
     paragraphs: [
       'The flip started in 1984, when the government stopped subsidising farming. Sheep farming lost its safety net. Dairy paid better, so paddocks switched.',
       "Canterbury led the way. The region's lamb flock gave way to dairy cows, and the same story played out across the country.",

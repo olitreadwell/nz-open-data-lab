@@ -5,10 +5,21 @@ Example site for
 One microsite, the sheep index, showing the full pipeline from a New Zealand
 public-data connector to a deployed static chart.
 
+## Maintenance
+
+This is a personal experiment, not a community project. Issues are welcome
+when something on the site is broken or a number looks wrong, and those get
+fixed.
+
+Pull requests that change what the site shows are unlikely to be merged. The
+deployed site is built from a private working repository that carries the
+experiments, the fixtures and the deploy workflows, so a change merged here
+would not reach visitors. See `CONTRIBUTING.md` for what is in scope.
+
 ## The microsite
 
-- **The sheep index**: New Zealand's national flock has nearly halved since
-  1994, from 49.5 million sheep to 23.3 million. Data from the Stats NZ
+- **The sheep index**: New Zealand's national flock is down 53% since 1994,
+  from 49.5 million sheep to 23.3 million. Data from the Stats NZ
   Aotearoa Data Explorer, fetched at deploy time.
 
 ## What this example shows

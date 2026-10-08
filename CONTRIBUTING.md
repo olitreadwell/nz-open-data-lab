@@ -1,5 +1,20 @@
 # Contributing
 
+## Scope first
+
+This repository is a readable mirror of a working project. Issues are welcome
+when the site is broken or a number looks wrong.
+
+Code pull requests are unlikely to be merged. The deployed site is built from a
+private repository that holds the experiments, the fixtures and the deploy
+workflows, so a change here does not reach visitors. If you want to fix
+something, open an issue first and we can work out whether this repo is the
+right place for it.
+
+The rest of this file describes the conventions the code follows, which is
+useful if you are reading the source or running it locally.
+
+
 ## Getting Started
 
 1. Fork the repository

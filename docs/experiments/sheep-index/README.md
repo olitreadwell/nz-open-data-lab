@@ -2,7 +2,7 @@
 
 ## Pitch
 
-New Zealand's national animal is in freefall: the sheep flock has nearly halved since 1994
+New Zealand's national animal is in freefall: the sheep flock is down 53% since 1994
 (49.5 million then, 23.3 million in 2025). Why would anyone be surprised by the decline of
 sheep? Because it is the biggest single-number story in NZ agriculture, and the ADE API makes
 it fetchable live.
