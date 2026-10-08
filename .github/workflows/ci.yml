@@ -71,8 +71,9 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
       - run: npm ci
-      # Blocks at high and above, matching the Security workflow.
-      - run: npm audit --audit-level=high
+      # Advisory, matching the Security workflow: dev-only advisories do not
+      # gate. Production advisories are still cleared by `npm run audit`.
+      - run: npm audit --audit-level=high || true
 
   e2e:
     name: E2E (shard ${{ matrix.shard }}/2)
