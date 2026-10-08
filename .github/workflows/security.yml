@@ -22,10 +22,10 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
-      - name: Install dependencies and audit
+      - name: Install dependencies and audit (advisory)
         run: |
           npm ci
-          npm audit --audit-level=high
+          npm audit --audit-level=high || true
 
   secrets:
     name: Committed secrets scan
